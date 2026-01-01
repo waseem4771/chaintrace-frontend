@@ -41,7 +41,8 @@ const AdminDashboard = () => {
   const deleteCase = async (caseId) => {
     if (window.confirm(`⚠️ WARNING: Are you sure you want to delete Case [${caseId}] and all its linked transactions? This cannot be undone.`)) {
       try {
-        await axios.delete(`http://localhost:5000/api/admin/case/${caseId}`);
+        // await axios.delete(`http://localhost:5000/api/admin/case/${caseId}`);
+                await axios.delete(`https://chaintrace-backend1.vercel.app/api/admin/case/${caseId}`);
         fetchAll(); // Table refresh karne ke liye
       } catch (err) {
         alert("Error deleting case. Make sure backend is active.");
